@@ -3,28 +3,26 @@ import { Row, Col, Tabs, Tab } from "react-bootstrap";
 import { connect } from "react-redux";
 import { history } from "../../../store";
 import Utilities from "../../../Utilities";
-import addfiles from "./../../../Static/images/360cvm/AddFilesIcon.svg";
+import addfiles from "./../../../Static/images/AddFilesIcon.svg";
 import {
-  GrooveTabComponent,
-  GrooveIconSvg,
-  GrooveInput,
-  GrooveSelectMenuBasic,
-  GrooveDateCalendarPicker,
-  GrooveButton,
-  GrooveRadioButton,
-  GrooveTextBox,
-} from "tfo-groove";
-import CVMTable from "../../Shared/CVMTable/CVMTable";
-import CVMModal from "../../Shared/CVMModal/CVMModal";
+  Input,
+  SelectMenuBasic,
+  DateCalendarPicker,
+  Button,
+  RadioButton,
+  TextBox,
+} from "...";
+import Table from "../../Shared/Table/Table";
+import Modal from "../../Shared/Modal/Modal";
 
 import "./ProjectDetails.css";
 const ProjectDetails = (function() {
   class ProjectDetailsPresentational extends Component {
     render() {
       return (
-        <div className="client-config-container">
-          <CVMModal
-            title={"Add Project to Program 1"}
+        <div className="container">
+          <Modal
+            title={"Add Person"}
             show={this.props.show}
             onCloseModal={this.props.onCloseModal}
             size={this.props.size}
@@ -52,8 +50,8 @@ const ProjectDetails = (function() {
           </div>
           <div className="stepper-tab-right-section">
             <div className="tab-section-header bodytext18-medium-midnight">
-              Program 1 Projects
-              <GrooveButton
+              Program 1 Person
+              <Button
                 id="primry-btn-1"
                 name="Solid Button Primary-Ops"
                 isDisabled={false}
@@ -61,7 +59,7 @@ const ProjectDetails = (function() {
                 type="solid"
                 colorClass="stat-alternate"
                 size="auto"
-                text="Add New Project"
+                text="Add New Person"
                 iconAlignment="right"
                 iconSize="small"
                 iconName="plus"
@@ -71,22 +69,22 @@ const ProjectDetails = (function() {
                 customClassName={"add-button-right"}
               />
             </div>
-            <div className="added-program-container">
-              {/* if programs were empty */}
+            <div className="added-person-container">
+              {/* if table is empty */}
               <div className="empty-program-container bodytext18-regular-slate">
                 <img src={addfiles} alt="select client" />
                 <span className="bodytext24-medium-slate">
-                  No Project Added
+                  No Person Added
                 </span>
-                Please add project(s) to this program by using the 'Add New
-                Project' button above.
+                Please add person(s) to this program by using the 'Add New
+                Person' button above.
               </div>
             </div>
-            <div className="added-program-table-container">
-              <CVMTable tableProperties={this.props.tableProperties} />
+            <div className="added-person-table-container">
+              <Table tableProperties={this.props.tableProperties} />
             </div>
-            <div className="add-program-buttons">
-              <GrooveButton
+            <div className="add-person-buttons">
+              <Button
                 id="primry-btn-1"
                 name="Solid Button Primary-Ops"
                 isDisabled={false}
@@ -98,7 +96,7 @@ const ProjectDetails = (function() {
                 // callbackFunction={action('clicked')}
               />
 
-              <GrooveButton
+              <Button
                 id="primry-btn-1"
                 name="Solid Button Primary-Ops"
                 isDisabled={false}
@@ -122,7 +120,7 @@ const ProjectDetails = (function() {
         <div className="add-project-modal">
           <Row>
             <Col lg={6} md={6} sm={12}>
-              <GrooveInput
+              <Input
                 id="name"
                 name="name"
                 placeholder="Name"
@@ -135,7 +133,7 @@ const ProjectDetails = (function() {
           </Row>
           <Row>
             <Col lg={12} md={12} sm={12}>
-              <GrooveTextBox
+              <TextBox
                 id="description"
                 name="description"
                 minLength={20}
@@ -147,7 +145,7 @@ const ProjectDetails = (function() {
           </Row>
           <Row>
           <Col lg={12} md={12} sm={12}>
-              <GrooveSelectMenuBasic
+              <SelectMenuBasic
                 name="location"
                 isDisabled={false}
                 placeholder="Location"
@@ -158,7 +156,7 @@ const ProjectDetails = (function() {
             </Col>
           </Row>
           <div className="add-button">
-            <GrooveButton
+            <Button
               id="primry-btn-1"
               name="Solid Button Primary-Ops"
               isDisabled={false}
@@ -170,7 +168,7 @@ const ProjectDetails = (function() {
               callbackFunction={this.props.onCloseModal}
             />
 
-            <GrooveButton
+            <Button
               id="primry-btn-1"
               name="Solid Button Primary-Ops"
               isDisabled={false}
