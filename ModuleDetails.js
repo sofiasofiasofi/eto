@@ -72,7 +72,7 @@ const ProjectDetails = (function() {
             <div className="added-person-container">
               {/* if table is empty */}
               <div className="empty-program-container bodytext18-regular-slate">
-                <img src={addfiles} alt="select client" />
+                <img src={addfiles} />
                 <span className="bodytext24-medium-slate">
                   No Person Added
                 </span>
@@ -206,6 +206,7 @@ const ProjectDetails = (function() {
             {
                 name: "testname",
                 description: "testdesc",
+                location: "location",
             },
           ],
         },
