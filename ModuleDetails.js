@@ -86,7 +86,6 @@ const ProjectDetails = (function() {
             <div className="add-person-buttons">
               <Button
                 id="primry-btn-1"
-                name="Solid Button Primary-Ops"
                 isDisabled={false}
                 hasIcon={false}
                 type="outline"
@@ -98,13 +97,12 @@ const ProjectDetails = (function() {
 
               <Button
                 id="primry-btn-1"
-                name="Solid Button Primary-Ops"
                 isDisabled={false}
                 hasIcon={false}
                 type="solid"
                 colorClass="stat-alternate"
                 size="auto"
-                text="Send for Approval"
+                text="Send"
                 // callbackFunction={action('clicked')}
               />
             </div>
